@@ -1,0 +1,3 @@
+module ApiKey
+  CALAIS_KEY='YOUR CALAIS API KEY'
+end
