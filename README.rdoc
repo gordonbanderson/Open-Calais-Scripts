@@ -1,0 +1,86 @@
+= Open Calais Example Scripts
+This project contains a number of tools related to Open Calais
+* Calais Helper - include this module to add get_tags to your script.  This will post text against Open Calais returning a hash
+* Calais File - Parse a local file using the Open Calais service
+* BBC News Scraper - Uses hpricot to parse the body of text out of standard BBC news webpages
+
+
+= Calais API key
+Copy the file api_key.example to api_key.rb
+Register at http://www.opencalais.com/user/register and get an API key
+
+
+= Example Usage
+== Calais File
+The sample file contains the text
+  Barack Obama is the president of the United States of America.
+
+Output from Open Calais is as follows:
+
+  ruby calais_file.rb text/example1.txt
+  
+  --
+  Person
+          Barack Obama
+  --
+  Position
+          president
+  --
+  Country
+          United States of America
+  --
+  Relations
+          PersonCareer
+
+
+== BBC News Scraper
+Pass the scraper a URL
+
+    ruby scrapers/bbc_news.rb http://news.bbc.co.uk/2/hi/uk_news/politics/8240220.stm
+
+Output is returned as follows:
+
+    Person
+            Ali al-Megrahi
+            Full
+            Gaddafi
+            Gordon Brown
+            Jason McCue
+            Jeffrey Donaldson
+    --
+    IndustryTerm
+            oil deals
+    --
+    Position
+            Democratic Unionist MP
+            Downing Street spokesman
+            MP
+            Prime Minister
+            lawyer
+            spokesman
+    --
+    Facility
+            Downing Street
+    --
+    Country
+            Libya
+            United Kingdom
+            United States
+    --
+    Relations
+            PersonCareer
+            PersonCommunication
+            Quotation
+    --
+    Company
+            BBC
+            Facebook
+    --
+    Currency
+            GBP
+    --
+    Organization
+            Libyan government
+            Scottish government
+            UK government
+            US government
